@@ -19,6 +19,14 @@ app.use("/api/employee", adminProtected, require("./routes/employee.routes"))
 app.use("*", (req, res) => {
     res.status(404).json({ message: "resource not found" })
 })
+// express error handler
+app.use((err, req, res, next) => {
+    if (err) {
+        console.log(err)
+        return res.status(500).json({ message: "something went wrong" })
+
+    }
+})//error handler 4 arugument hotey hai
 
 mongoose.connect(process.env.MONGO_URL)
 mongoose.connection.once("open", () => {
