@@ -23,3 +23,6 @@ exports.getAllEmployee = asyncHandler(async (req, res) => {
 })
 
 //populate=> jeycha id teycha sarv data ghehun yeto
+
+// const result = oldProduct.hero.filter(item => !req.body.remove.includes(item))
+// oldProduct.hero = result
